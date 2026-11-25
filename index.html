@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Armeli | Ofertas, Achadinhos e Economia</title>
+
+    <meta name="description" content="Conheça a Armeli. Curadoria de produtos, dicas de compras e recomendações para casa, mães, famílias e economia no dia a dia.">
+    <meta name="theme-color" content="#f36b21">
+
+    <style>
+        :root {
+            --primary: #f36b21;
+            --primary-dark: #ce5010;
+            --secondary: #ffb347;
+            --background: #fffaf5;
+            --surface: #ffffff;
+            --text: #252525;
+            --muted: #666666;
+            --border: #eee5dc;
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(
+                135deg, #fff7ec, #ffe1bd
+            );
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--primary-dark);
+            background: #ffffffaa;
+            padding: 7px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 66px);
+            line-height: 1.12;
+            max-width: 850px;
+            margin: auto;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 24px auto 32px;
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 26px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 72px 0;
+            scroll-margin-top: 85px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(26px, 4vw, 38px);
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: var(--muted);
+            max-width: 720px;
+            margin: 0 auto 36px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 24px #44220006;
+            transition: .2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px #4422000d;
+        }
+
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        .white-section {
+            background: white;
+        }
+
+        .article {
+            scroll-margin-top: 100px;
+        }
+
+        .article ul {
+            margin: 16px 0 0 18px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .article li {
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: var(--primary-dark);
+            background: #fff1e4;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 16px;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            margin-top: 18px;
+            color: var(--muted);
+        }
+
+        .contact-section {
+            background: #252525;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section p {
+            color: #dddddd;
+            margin: 18px auto 28px;
+            max-width: 650px;
+        }
+
+        .legal {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .legal details {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 14px;
+        }
+
+        .legal summary {
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .legal p {
+            margin-top: 15px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer {
+            background: #191919;
+            color: #bbbbbb;
+            padding: 36px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer .logo {
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            margin: 16px 0;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 70px 15px;
+            }
+
+            section {
+                padding: 48px 0;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 12px 0;
+                gap: 8px;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 14px;
+                font-size: 13px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="#" class="logo">armeli.</a>
+
+        <nav aria-label="Menu principal">
+            <a href="#">Início</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#dicas">Dicas</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <span class="eyebrow">
+            GARIMPO INTELIGENTE DE OFERTAS
+        </span>
+
+        <h1>
+            Comprar bem é
+            <span>economizar de verdade.</span>
+        </h1>
+
+        <p>
+            Achadinhos, recomendações e dicas de compras
+            para facilitar sua rotina, cuidar da sua
+            família e aproveitar melhor seu dinheiro.
+        </p>
+
+        <a href="#categorias" class="button">
+            Conheça nossas categorias
+        </a>
+    </section>
+
+    <section id="categorias">
+        <div class="container">
+
+            <h2 class="section-title">
+                Encontre o que combina com você
+            </h2>
+
+            <p class="section-description">
+                Organizamos nossas recomendações em
+                categorias para ajudar você a encontrar
+                produtos úteis para cada momento da vida.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+                    <div class="category-icon">🏠</div>
+                    <h3>Armeli Casa</h3>
+                    <p>
+                        Organização, cozinha, decoração,
+                        limpeza, utilidades domésticas e
+                        soluções para uma casa mais prática.
+                    </p>
+                    <a class="card-link" href="#dica-casa">
+                        Ver dicas para casa →
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="category-icon">🧸</div>
+                    <h3>Armeli Mães e Família</h3>
+                    <p>
+                        Produtos para bebês, crianças,
+                        maternidade e famílias que buscam
+                        praticidade e economia na rotina.
+                    </p>
+                    <a class="card-link" href="#dica-familia">
+                        Ver dicas para família →
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="category-icon">🏷️</div>
+                    <h3>Armeli Promoções</h3>
+                    <p>
+                        Tecnologia, acessórios, moda,
+                        utilidades e oportunidades de
+                        economia em diferentes categorias.
+                    </p>
+                    <a class="card-link" href="#dica-promocoes">
+                        Ver dicas de economia →
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="dicas" class="white-section">
+        <div class="container">
+
+            <h2 class="section-title">
+                Compre com mais inteligência
+            </h2>
+
+            <p class="section-description">
+                Nem todo desconto representa economia.
+                Confira nossas dicas para fazer escolhas
+                mais conscientes.
+            </p>
+
+            <div class="grid">
+
+                <article class="card article" id="dica-casa">
+                    <span class="tag">CASA</span>
+
+                    <h3>
+                        Como escolher organizadores
+                        para sua cozinha
+                    </h3>
+
+                    <p>
+                        Antes de comprar organizadores,
+                        avalie o espaço disponível e os
+                        objetos que você realmente precisa
+                        armazenar. Produtos empilháveis
+                        podem ajudar a aproveitar armários
+                        pequenos.
+                    </p>
+
+                    <ul>
+                        <li>Meça o espaço antes da compra.</li>
+                        <li>Verifique o material e a resistência.</li>
+                        <li>Prefira modelos fáceis de limpar.</li>
+                        <li>Compare o preço por unidade.</li>
+                    </ul>
+                </article>
+
+                <article class="card article" id="dica-familia">
+                    <span class="tag">MÃES E FAMÍLIA</span>
+
+                    <h3>
+                        O que avaliar antes de comprar
+                        produtos infantis
+                    </h3>
+
+                    <p>
+                        Produtos infantis precisam atender
+                        às necessidades de cada fase da
+                        criança. Segurança e adequação à
+                        idade devem ter prioridade sobre
+                        descontos e aparência.
+                    </p>
+
+                    <ul>
+                        <li>Confira a faixa etária indicada.</li>
+                        <li>Verifique certificações aplicáveis.</li>
+                        <li>Leia avaliações de compradores.</li>
+                        <li>Observe materiais e instruções de uso.</li>
+                    </ul>
+                </article>
+
+                <article class="card article" id="dica-promocoes">
+                    <span class="tag">ECONOMIA</span>
+
+                    <h3>
+                        Como identificar uma promoção
+                        que realmente vale a pena
+                    </h3>
+
+                    <p>
+                        Uma porcentagem alta de desconto
+                        não garante o melhor preço.
+                        Compare o custo total da compra,
+                        incluindo frete, e considere a
+                        necessidade real do produto.
+                    </p>
+
+                    <ul>
+                        <li>Compare preços em diferentes lojas.</li>
+                        <li>Confira o histórico de preços.</li>
+                        <li>Considere frete e prazo de entrega.</li>
+                        <li>Verifique a reputação do vendedor.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container about">
+
+            <h2 class="section-title">
+                Somos a Armeli
+            </h2>
+
+            <p>
+                A Armeli nasceu com uma proposta simples:
+                ajudar pessoas e famílias a encontrar
+                produtos úteis e oportunidades de economia
+                sem precisar perder horas pesquisando.
+            </p>
+
+            <p>
+                Nosso trabalho é reunir recomendações,
+                compartilhar dicas e facilitar a descoberta
+                de produtos em diferentes categorias.
+            </p>
+
+            <p>
+                Valorizamos a transparência, a qualidade
+                das informações e o consumo consciente.
+                Acreditamos que comprar bem significa
+                encontrar o produto certo pelo preço certo.
+            </p>
+
+        </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+        <div class="container">
+
+            <h2 class="section-title">
+                Fale com a Armeli
+            </h2>
+
+            <p>
+                Tem sugestões, dúvidas, recomendações
+                de produtos ou interesse em parcerias?
+                Entre em contato com nossa equipe.
+            </p>
+
+            <a class="button"
+               href="mailto:contato.armeli@gmail.com">
+                Entrar em contato
+            </a>
+
+        </div>
+    </section>
+
+    <section id="transparencia">
+        <div class="container legal">
+
+            <h2 class="section-title">
+                Transparência e privacidade
+            </h2>
+
+            <details open>
+                <summary>Links de afiliados</summary>
+
+                <p>
+                    A Armeli pode utilizar links de afiliados
+                    em suas recomendações. Quando uma compra
+                    elegível é realizada por meio desses links,
+                    podemos receber uma comissão, sem custo
+                    adicional decorrente dessa comissão para
+                    o consumidor.
+                </p>
+
+                <p>
+                    As recomendações têm caráter informativo.
+                    A decisão de compra é sempre do consumidor.
+                </p>
+            </details>
+
+            <details>
+                <summary>Preços e disponibilidade</summary>
+
+                <p>
+                    Preços, descontos, estoque, condições de
+                    pagamento e frete podem sofrer alterações
+                    a qualquer momento. Consulte sempre as
+                    informações atualizadas na loja responsável
+                    antes de finalizar uma compra.
+                </p>
+            </details>
+
+            <details>
+                <summary>Política de privacidade</summary>
+
+                <p>
+                    Esta versão do site não possui formulários
+                    de cadastro, contas de usuários, ferramentas
+                    próprias de rastreamento ou cookies
+                    publicitários.
+                </p>
+
+                <p>
+                    O serviço de hospedagem pode processar
+                    informações técnicas de acesso, como endereço
+                    IP e dados de requisição, para funcionamento
+                    e segurança da infraestrutura.
+                </p>
+
+                <p>
+                    Caso você entre em contato por e-mail,
+                    utilizaremos as informações fornecidas
+                    para responder à sua solicitação.
+                </p>
+
+                <p>
+                    Sites externos possuem suas próprias
+                    políticas de privacidade e condições
+                    de utilização.
+                </p>
+
+                <p>
+                    Para dúvidas ou solicitações relacionadas
+                    à privacidade, entre em contato pelo e-mail
+                    contato.armeli@gmail.com.
+                </p>
+            </details>
+
+            <details>
+                <summary>Responsabilidade pelas compras</summary>
+
+                <p>
+                    A Armeli atua na divulgação e recomendação
+                    de produtos. Não realiza diretamente
+                    vendas, cobranças, entregas ou trocas.
+                    Essas atividades são de responsabilidade
+                    das lojas e vendedores envolvidos.
+                </p>
+            </details>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+
+        <a href="#" class="logo">armeli.</a>
+
+        <p>
+            Boas escolhas. Mais economia.
+        </p>
+
+        <div class="footer-links">
+            <a href="#sobre">Sobre nós</a>
+            <a href="#transparencia">Privacidade</a>
+            <a href="#transparencia">Transparência</a>
+            <a href="#contato">Contato</a>
+        </div>
+
+        <p>
+            © <span id="year">2026</span> Armeli.
+            Todos os direitos reservados.
+        </p>
+
+    </div>
+</footer>
+
+<script>
+    document.getElementById('year').textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
